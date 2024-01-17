@@ -1,0 +1,15 @@
+All code in this repository (https://github.com/AnchorZ-org/ocaml-ast-helpers) is licensed under
+GNU Lesser General Public License (LGPL) version 3.0. A copy of the terms can be found in LICENSE.
+
+The copyright holders for individual / collections of files are listed below:
+
+- src/lib_ocaml_ast_helpers/{printast,pprintast}.ml
+  - Copyright 2023 AnchorZ Inc.
+  - Copyright 1999, 2007 Institut National de Recherche en Informatique et en Automatique.
+  - Additional notices:
+    - printast.ml is adopted from the OCaml Core System (version 5.1.0) source code distribution
+    - pprintast.ml is adopted from the Ppxlib (version 0.30.0) source code distribution,
+      which is apparently originally adopted from the OCaml Core System source code distribution
+
+- src/lib_ocaml_ast_helpers/dune
+  - Copyright 2023 AnchorZ Inc.

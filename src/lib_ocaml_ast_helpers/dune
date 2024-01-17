@@ -1,0 +1,4 @@
+(library
+ (name ocaml_ast_helpers)
+ (flags :standard -w -9-33-32)
+ (libraries ppxlib))
