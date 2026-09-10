@@ -41,10 +41,9 @@ let fmt_location f loc =
 let rec fmt_longident_aux f x =
   match x with
   | Longident.Lident s -> fprintf f "%s" s
-  (* ocaml >= 5.4 astlib longident: Ldot/Lapply components are loc-wrapped *)
-  | Longident.Ldot (y, s) -> fprintf f "%a.%s" fmt_longident_aux y.txt s.txt
+  | Longident.Ldot (y, s) -> fprintf f "%a.%s" fmt_longident_aux y s
   | Longident.Lapply (y, z) ->
-    fprintf f "%a(%a)" fmt_longident_aux y.txt fmt_longident_aux z.txt
+    fprintf f "%a(%a)" fmt_longident_aux y fmt_longident_aux z
 
 let fmt_longident f x = fprintf f "\"%a\"" fmt_longident_aux x
 
