@@ -14,6 +14,7 @@
 (**************************************************************************)
 
 open Astlib.Ast_414
+module Longident = Astlib.Longident
 
 open Asttypes
 open Format
@@ -40,12 +41,10 @@ let fmt_location f loc =
 let rec fmt_longident_aux f x =
   match x with
   | Longident.Lident s -> fprintf f "%s" s
-  (* ocaml >= 5.4: Ldot/Lapply components are Location.loc-wrapped *)
-  | Longident.Ldot (y, s) ->
-    fprintf f "%a.%s" fmt_longident_aux y.Location.txt s.Location.txt
+  (* ocaml >= 5.4 astlib longident: Ldot/Lapply components are loc-wrapped *)
+  | Longident.Ldot (y, s) -> fprintf f "%a.%s" fmt_longident_aux y.txt s.txt
   | Longident.Lapply (y, z) ->
-    fprintf f "%a(%a)" fmt_longident_aux y.Location.txt fmt_longident_aux
-      z.Location.txt
+    fprintf f "%a(%a)" fmt_longident_aux y.txt fmt_longident_aux z.txt
 
 let fmt_longident f x = fprintf f "\"%a\"" fmt_longident_aux x
 
