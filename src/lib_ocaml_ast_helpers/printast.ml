@@ -14,6 +14,7 @@
 (**************************************************************************)
 
 open Astlib.Ast_414
+module Longident = Astlib.Longident
 
 open Asttypes
 open Format
